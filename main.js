@@ -14,7 +14,7 @@
    page reads from here — change once, updates everywhere.
    ------------------------------------------------------------ */
 const CONFIG = {
-  CALENDLY: "https://calendly.com/dts-consulting/30min", // <-- PLACEHOLDER: replace with your real Calendly link
+  CALENDLY: "https://calendly.com/dtsconsultingservice/30min",
   EMAIL:    "dtsconsultingservice@gmail.com",
   LINKEDIN: "https://www.linkedin.com/in/diomidispt/",
 };
