@@ -13,7 +13,7 @@ locally**; these are the external accounts / deploy tasks that only I can finish
 - [ ] Reload the site and click **Book a free call** to confirm it opens my Calendly.
 
 ## 2. Set up the email
-- [ ] Decide the address. For now the plan is **`dtsconsulting@gmail.com`** (Gmail, free).
+- [ ] Decide the address. For now the plan is **`dtsconsultingservice@gmail.com`** (Gmail, free).
       - Create that Gmail account if it doesn't exist yet.
       - It's already wired into the site (`CONFIG.EMAIL` in `main.js`) — just change the
         string if I pick a different address.

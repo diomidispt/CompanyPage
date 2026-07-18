@@ -15,7 +15,7 @@
    ------------------------------------------------------------ */
 const CONFIG = {
   CALENDLY: "https://calendly.com/dts-consulting/30min", // <-- PLACEHOLDER: replace with your real Calendly link
-  EMAIL:    "dtsconsulting@gmail.com",
+  EMAIL:    "dtsconsultingservice@gmail.com",
   LINKEDIN: "https://www.linkedin.com/in/diomidispt/",
 };
 
