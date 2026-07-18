@@ -153,8 +153,11 @@ section[id] { scroll-margin-top: 76px; }
    a tap target and makes .section__body collapsible.
    ============================================================ */
 .section__toggle {
+  -webkit-appearance: none; appearance: none;
+  -webkit-tap-highlight-color: transparent;
   display: flex; align-items: center; gap: 12px;
-  width: 100%; background: none; border: 0; padding: 0; margin: 0;
+  width: 100%; background: transparent; background-color: transparent;
+  border: 0; box-shadow: none; border-radius: 0; padding: 0; margin: 0;
   font: inherit; color: inherit; text-align: left; cursor: default;
 }
 .section__chevron {
