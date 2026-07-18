@@ -31,7 +31,9 @@
 
 /* ---------- reset-ish ---------- */
 * { box-sizing: border-box; }
-html { scroll-behavior: smooth; scroll-padding-top: 78px; overflow-x: hidden; }
+/* overflow-x: clip (not hidden) blocks sideways scroll WITHOUT creating a
+   scroll container — so the sticky top bar keeps working. */
+html { scroll-behavior: smooth; scroll-padding-top: 78px; overflow-x: clip; }
 body {
   margin: 0;
   font-family: var(--font);
@@ -40,7 +42,7 @@ body {
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
-  overflow-x: hidden;
+  overflow-x: clip;
   max-width: 100%;
 }
 /* never let a long word or big headline force a sideways scroll on phones */

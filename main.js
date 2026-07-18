@@ -94,6 +94,12 @@ const CONFIG = {
 
     a.addEventListener("click", (e) => {
       e.preventDefault();
+      // The brand logo / "#top" always goes to the very top of the page.
+      if (hash === "#top" || target === header) {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+        history.pushState(null, "", hash);
+        return;
+      }
       // Jumping straight to a section via nav should reveal its content,
       // not land on a collapsed accordion header (mobile only).
       const toggle = target.querySelector(".section__toggle");
