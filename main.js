@@ -59,6 +59,33 @@ const CONFIG = {
 })();
 
 /* ------------------------------------------------------------
+   Precise in-page smooth scrolling.
+   Scrolls so the target lands just below the sticky header,
+   instead of hiding under it (fixes "doesn't scroll exactly
+   where I want"). Runs AFTER config wiring, so the Calendly /
+   email / LinkedIn buttons (now real URLs) are left alone.
+   ------------------------------------------------------------ */
+(function smoothAnchors() {
+  const header = document.querySelector(".nav");
+  const gap = 14; // breathing room below the header
+  const offset = () => (header ? header.offsetHeight : 68) + gap;
+
+  document.querySelectorAll('a[href^="#"]').forEach((a) => {
+    const hash = a.getAttribute("href");
+    if (!hash || hash === "#") return;
+    const target = document.querySelector(hash);
+    if (!target) return;
+
+    a.addEventListener("click", (e) => {
+      e.preventDefault();
+      const y = target.getBoundingClientRect().top + window.pageYOffset - offset();
+      window.scrollTo({ top: Math.max(0, y), behavior: "smooth" });
+      history.pushState(null, "", hash);
+    });
+  });
+})();
+
+/* ------------------------------------------------------------
    Active nav link highlight based on section in view
    ------------------------------------------------------------ */
 (function activeLink() {
