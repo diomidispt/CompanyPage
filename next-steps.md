@@ -1,51 +1,68 @@
-# ✅ Next steps — things I still need to do
+# ✅ Next steps — deploy + finish setup
 
-A checklist so I remember where I left off. The website itself is **done and works
-locally**; these are the external accounts / deploy tasks that only I can finish.
+The website is **done and works** (running locally, and reflected on the temporary tunnel
+link). What's left are the external accounts and the deploy, which only I can do.
+
+Current facts:
+- **Email:** `dtsconsultingservice@gmail.com` (created, already wired into the site).
+- **Domain:** `dts-consulting-services.com` (bought at Namecheap).
+- **Code:** pushed to GitHub at `diomidispt/CompanyPage` (branch `main`, all files at repo root).
+- **Calendly:** still a placeholder — needs my real link.
 
 ---
 
-## 1. Set up Calendly (booking button)
-- [ ] Create a **free** account at <https://calendly.com>.
-- [ ] Create a **30-minute** event (e.g. "Free 30-min intro call").
-- [ ] Copy the event link (looks like `https://calendly.com/my-name/30min`).
-- [ ] Paste it into `main.js` → `CONFIG.CALENDLY` (replace the placeholder).
-- [ ] Reload the site and click **Book a free call** to confirm it opens my Calendly.
+## 1. Deploy the site free on Cloudflare Pages
+Goal: get the site live on a free `*.pages.dev` URL. No domain needed for this step.
 
-## 2. Set up the email
-- [ ] Decide the address. For now the plan is **`dtsconsultingservice@gmail.com`** (Gmail, free).
-      - Create that Gmail account if it doesn't exist yet.
-      - It's already wired into the site (`CONFIG.EMAIL` in `main.js`) — just change the
-        string if I pick a different address.
-- [ ] (Later / optional) Go pro with a custom domain:
-      - `dts.com` is **taken** (DTS Inc, audio company) — so register something like
-        **`dtsconsulting.com`** (~$10–12/yr).
-      - Then I can have `hello@dtsconsulting.com` + `diomidis@dtsconsulting.com` and a
-        future `nikos@dtsconsulting.com`. Free email hosting via Cloudflare Email Routing
-        or Zoho Mail.
-      - Update `CONFIG.EMAIL` when I switch.
+- [ ] Go to <https://dash.cloudflare.com> and sign up (use `dtsconsultingservice@gmail.com`).
+- [ ] **Workers & Pages** → **Create** → **Pages** → **Connect to Git** → authorize GitHub.
+- [ ] Pick the **`diomidispt/CompanyPage`** repo.
+- [ ] Build settings:
+      - Framework preset: **None**
+      - Build command: **(leave empty)**
+      - Build output directory: **`/`**
+- [ ] **Save and Deploy.** In ~30s I get a live link like `https://companypage-xxx.pages.dev`.
+      (I can rename the project to make it `dts-consulting-services.pages.dev`.)
+- [ ] Open the link on my phone to check mobile.
 
-## 3. Deploy it publicly (free)
-- [ ] Push the repo to GitHub (see README — remote is already set).
-- [ ] **Cloudflare Pages** (recommended): connect the repo → preset `None`, no build
-      command, output dir `/` → get `dts-consulting.pages.dev`.
-      - *(Alternative: GitHub Pages — repo must be public.)*
-- [ ] Open the live URL on my phone to check it looks good on mobile.
+Every future `git push` to `main` auto-redeploys. Cost: €0.
 
-## 4. (Later) Custom domain
-- [ ] Register `dtsconsulting.com` (Cloudflare Registrar / Namecheap / etc.).
-- [ ] In Cloudflare Pages → **Custom domains** → add it, follow DNS steps (HTTPS is automatic).
-- [ ] Update `CONFIG.EMAIL` if I moved to a domain email.
+## 2. Point my domain (dts-consulting-services.com) at Pages
+Easiest path is to move the domain's DNS to Cloudflare (free), then Pages wires itself up.
 
-## 5. Polish the content (optional but recommended)
-- [ ] Replace the **placeholder "Notable engagements"** in `index.html` (`#about` section)
-      with my own anonymized real work.
-- [ ] Double-check certifications/dates are exactly how I want them shown.
-- [ ] (Optional) Add a real headshot in place of the "DPT" avatar tile.
+- [ ] In Cloudflare dashboard: **Add a site** → enter `dts-consulting-services.com` → pick the
+      **Free** plan. Cloudflare shows me **2 nameservers** (e.g. `xxx.ns.cloudflare.com`).
+- [ ] In **Namecheap**: Domain List → Manage → **Nameservers** → choose **Custom DNS** →
+      paste Cloudflare's 2 nameservers → save. (Activation: minutes to a few hours.)
+- [ ] Back in Cloudflare **Pages** → my project → **Custom domains** → **Set up a domain** →
+      add `dts-consulting-services.com` **and** `www.dts-consulting-services.com`.
+      Cloudflare creates the DNS records automatically and issues HTTPS.
+- [ ] Test `https://dts-consulting-services.com` loads with the padlock.
+
+(Alternative without moving nameservers: keep DNS at Namecheap and add the CNAME that
+Cloudflare Pages gives me. Moving nameservers is simpler and unlocks free email routing below.)
+
+## 3. Set up Calendly (booking button)
+- [ ] Sign up free at <https://calendly.com> with `dtsconsultingservice@gmail.com`.
+- [ ] Connect Google Calendar. Create a **30-min** event ("Free 30-min call").
+- [ ] Copy the event link (e.g. `https://calendly.com/dtsconsultingservice/30min`).
+- [ ] Paste it into `main.js` → `CONFIG.CALENDLY` (replace the placeholder), commit + push.
+- [ ] Click **Book a free call** on the live site to confirm.
+
+## 4. (Optional) Professional email on the domain — free
+Makes the site show `hello@dts-consulting-services.com` instead of the gmail.
+- [ ] Cloudflare → **Email** → **Email Routing** → add `hello@` and forward it to
+      `dtsconsultingservice@gmail.com`. Free.
+- [ ] If I want to *send* from that address too, use Zoho Mail's free tier.
+- [ ] Update `CONFIG.EMAIL` in `main.js` when I switch.
+
+## 5. (Optional) Polish
+- [ ] Swap the "DPT" avatar tile for a real headshot.
+- [ ] Review the "Selected experience" wording in the About section.
 
 ---
 
 ### Quick reference
-- Edit booking/email/LinkedIn in **one spot**: `main.js` → `CONFIG`.
-- Run locally: `cd CompanyPage && python3 -m http.server 8080` → http://localhost:8080
-- Full deploy instructions: see `README.md`.
+- Edit booking link / email / LinkedIn in **one spot**: `main.js` → `CONFIG`.
+- Run locally: `cd CompanyPage && python3 -m http.server 4321` → http://localhost:4321
+- Full deploy notes: see `README.md`.
