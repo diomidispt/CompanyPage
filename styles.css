@@ -166,8 +166,9 @@ section[id] { scroll-margin-top: 76px; }
    GRIDS + CARDS
    ============================================================ */
 .grid { display: grid; gap: 20px; }
-.grid--services { grid-template-columns: repeat(4, 1fr); }
+.grid--services { grid-template-columns: repeat(3, 1fr); }
 .grid--principles { grid-template-columns: repeat(2, 1fr); }
+.grid--three { grid-template-columns: repeat(3, 1fr); }
 
 .card {
   background: var(--surface);
@@ -307,5 +308,5 @@ section[id] { scroll-margin-top: 76px; }
   .nav__links a:not(.btn) { padding: 10px 4px; font-size: 1rem; border-bottom: 1px solid var(--border); }
   .nav__links .btn { margin-top: 8px; }
   .section { padding: 72px 0; }
-  .grid--services, .grid--principles { grid-template-columns: 1fr; }
+  .grid--services, .grid--principles, .grid--three { grid-template-columns: 1fr; }
 }
