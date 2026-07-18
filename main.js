@@ -67,7 +67,7 @@ const CONFIG = {
    ------------------------------------------------------------ */
 (function smoothAnchors() {
   const header = document.querySelector(".nav");
-  const gap = 14; // breathing room below the header
+  const gap = 18; // breathing room below the header
   const offset = () => (header ? header.offsetHeight : 68) + gap;
 
   document.querySelectorAll('a[href^="#"]').forEach((a) => {
@@ -78,7 +78,10 @@ const CONFIG = {
 
     a.addEventListener("click", (e) => {
       e.preventDefault();
-      const y = target.getBoundingClientRect().top + window.pageYOffset - offset();
+      // Land on the section's heading block — not the padded section top —
+      // so the title sits neatly just below the sticky header every time.
+      const anchor = target.querySelector(".section__head, .whyus__intro, .cta") || target;
+      const y = anchor.getBoundingClientRect().top + window.pageYOffset - offset();
       window.scrollTo({ top: Math.max(0, y), behavior: "smooth" });
       history.pushState(null, "", hash);
     });
