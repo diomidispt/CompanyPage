@@ -1,0 +1,345 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>DTS Consulting — Cloud, Kubernetes & DevOps Platform Engineering</title>
+  <meta name="description" content="DTS Consulting builds resilient cloud, Kubernetes and DevOps platforms on AWS, GCP & Azure — GitOps, IaC, DevSecOps, observability and MLOps. Book a free 30-minute intro call." />
+  <meta name="theme-color" content="#0a0f14" />
+
+  <!-- Open Graph / social preview -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="DTS Consulting — Cloud & DevOps Platform Engineering" />
+  <meta property="og:description" content="Resilient cloud, Kubernetes and DevOps platforms on AWS, GCP & Azure. Book a free 30-minute intro call." />
+  <meta property="og:site_name" content="DTS Consulting" />
+
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+
+  <!-- Inter webfont (system-font fallback if it fails to load) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!--
+    ============================================================
+    EDIT ME — the only 3 values you'll usually change live here,
+    mirrored in main.js CONFIG. Search "EDIT ME" to find them.
+      · Calendly link  (after you create a free calendly.com account)
+      · Email
+      · LinkedIn
+    ============================================================
+  -->
+
+  <a class="skip-link" href="#services">Skip to content</a>
+
+  <!-- ===================== NAV ===================== -->
+  <header class="nav" id="top">
+    <div class="container nav__inner">
+      <a class="brand" href="#top" aria-label="DTS Consulting home">
+        <span class="brand__mark" aria-hidden="true">DTS</span>
+        <span class="brand__name">Consulting</span>
+      </a>
+
+      <nav class="nav__links" id="navLinks" aria-label="Primary">
+        <a href="#services">Services</a>
+        <a href="#why-us">Why Us</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+        <a class="btn btn--primary btn--sm js-book" href="#" target="_blank" rel="noopener">Book a free call</a>
+      </nav>
+
+      <button class="nav__toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- ===================== HERO ===================== -->
+    <section class="hero">
+      <div class="container hero__inner reveal">
+        <p class="eyebrow">// Cloud &amp; DevOps consulting</p>
+        <h1 class="hero__title">
+          Cloud &amp; DevOps platforms,<br />
+          <span class="accent">engineered to scale.</span>
+        </h1>
+        <p class="hero__sub">
+          We help engineering teams design, build and operate secure, reliable platforms on
+          AWS, GCP &amp; Azure — Kubernetes, GitOps and infrastructure as code, done right from day one.
+        </p>
+        <div class="hero__cta">
+          <a class="btn btn--primary js-book" href="#" target="_blank" rel="noopener">Book a free 30-min call</a>
+          <a class="btn btn--ghost" href="#services">Explore services</a>
+        </div>
+        <ul class="hero__tags" aria-label="Technologies we work with">
+          <li>AWS</li><li>GCP</li><li>Azure</li><li>Kubernetes</li><li>Docker</li>
+          <li>Terraform</li><li>Ansible</li><li>GitOps</li><li>Argo CD</li><li>CI/CD</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ===================== SERVICES ===================== -->
+    <section class="section" id="services">
+      <div class="container">
+        <div class="section__head reveal">
+          <p class="eyebrow">// What we do</p>
+          <h2 class="section__title">Services</h2>
+          <p class="section__lead">
+            End-to-end platform engineering — from cloud foundations to production-grade Kubernetes,
+            security and MLOps.
+          </p>
+        </div>
+
+        <div class="grid grid--services">
+          <article class="card reveal">
+            <h3 class="card__title">Cloud Architecture &amp; Platform Engineering</h3>
+            <p class="card__body">
+              Resilient, scalable foundations on AWS, GCP &amp; Azure — landing zones, networking,
+              security, and cost guardrails built in from day one.
+            </p>
+            <ul class="tags"><li>AWS</li><li>GCP</li><li>Azure</li><li>Landing zones</li></ul>
+          </article>
+
+          <article class="card reveal">
+            <h3 class="card__title">Kubernetes Platforms, Engineered to Scale</h3>
+            <p class="card__body">
+              EKS, GKE, AKS — GitOps, multi-env pipelines, policies and security. A secure, reliable
+              platform your teams love to use.
+            </p>
+            <ul class="tags"><li>Kubernetes</li><li>EKS / GKE / AKS</li><li>GitOps</li><li>Argo CD</li></ul>
+          </article>
+
+          <article class="card reveal">
+            <h3 class="card__title">Infrastructure as Code</h3>
+            <p class="card__body">
+              Terraform, Ansible, Pulumi — multi-account orgs, reusable modules. Versioned infra,
+              drift control, and repeatable environments.
+            </p>
+            <ul class="tags"><li>Terraform</li><li>Ansible</li><li>Pulumi</li><li>Docker</li></ul>
+          </article>
+
+          <article class="card reveal">
+            <h3 class="card__title">DevSecOps That Scales with Your Teams</h3>
+            <p class="card__body">
+              Supply chain security, secrets management, policy-as-code. Automated guardrails across
+              environments without slowing delivery.
+            </p>
+            <ul class="tags"><li>Policy-as-code</li><li>Secrets</li><li>Supply chain</li><li>CI/CD</li></ul>
+          </article>
+
+          <article class="card reveal">
+            <h3 class="card__title">Observability &amp; SRE</h3>
+            <p class="card__body">
+              Metrics, logs, traces, SLOs, backups and disaster recovery. Proactive monitoring and
+              clear runbooks to reduce outages and stress.
+            </p>
+            <ul class="tags"><li>SLOs</li><li>Metrics / Logs / Traces</li><li>DR</li><li>Runbooks</li></ul>
+          </article>
+
+          <article class="card reveal">
+            <h3 class="card__title">MLOps &amp; AI Infrastructure</h3>
+            <p class="card__body">
+              Model registries, ML CI/CD, and automated inference workflows on Azure ML, Vertex AI &amp;
+              Kubeflow. From POC to production-grade ML platforms.
+            </p>
+            <ul class="tags"><li>Vertex AI</li><li>Azure ML</li><li>Kubeflow</li><li>ML CI/CD</li></ul>
+          </article>
+
+          <article class="card reveal">
+            <h3 class="card__title">Cloud Migration</h3>
+            <p class="card__body">
+              Lift-and-shift or re-architect — we plan and execute cloud migrations in waves,
+              minimising downtime and risk across AWS, GCP &amp; Azure.
+            </p>
+            <ul class="tags"><li>AWS</li><li>GCP</li><li>Azure</li><li>Re-architecture</li></ul>
+          </article>
+
+          <article class="card reveal">
+            <h3 class="card__title">Cost &amp; Performance Audits</h3>
+            <p class="card__body">
+              FinOps, rightsizing, autoscaling, and performance tuning. Actionable savings and
+              reliability improvements — delivered in days, not quarters.
+            </p>
+            <ul class="tags"><li>FinOps</li><li>Rightsizing</li><li>Autoscaling</li><li>Tuning</li></ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== WHY US ===================== -->
+    <section class="section section--alt" id="why-us">
+      <div class="container">
+        <div class="whyus">
+          <div class="whyus__intro reveal">
+            <p class="eyebrow">// Why choose us</p>
+            <h2 class="section__title">How we work</h2>
+            <p class="section__lead">
+              We partner with engineering teams across SaaS, FinTech and enterprise — hands-on,
+              opinionated, and focused on measurable outcomes.
+            </p>
+            <ul class="checklist">
+              <li>AWS, GCP &amp; Azure — multi-cloud native</li>
+              <li>Kubernetes, GitOps &amp; IaC specialists</li>
+              <li>MLOps &amp; AI infrastructure experience</li>
+              <li>Knowledge transfer included</li>
+              <li>No vendor lock-in agenda</li>
+              <li>Free 30-min intro call</li>
+            </ul>
+          </div>
+
+          <div class="grid grid--principles">
+            <article class="card reveal">
+              <h3 class="card__title">Outcomes over outputs</h3>
+              <p class="card__body">
+                We tie every platform decision to measurable KPIs and user impact — not just ticket velocity.
+              </p>
+            </article>
+            <article class="card reveal">
+              <h3 class="card__title">Security by default</h3>
+              <p class="card__body">
+                DevSecOps guardrails are baked into pipelines and platforms from the start, not bolted on later.
+              </p>
+            </article>
+            <article class="card reveal">
+              <h3 class="card__title">Operate what we build</h3>
+              <p class="card__body">
+                SRE practices and observability from day one — we don't hand off and disappear.
+              </p>
+            </article>
+            <article class="card reveal">
+              <h3 class="card__title">Automate the boring</h3>
+              <p class="card__body">
+                IaC and GitOps to eliminate toil, reduce drift, and free your team for work that matters.
+              </p>
+            </article>
+          </div>
+        </div>
+
+        <ul class="techstrip reveal" aria-label="Tools and platforms">
+          <li>AWS</li><li>GCP</li><li>Azure</li><li>Kubernetes</li><li>Docker</li>
+          <li>Terraform</li><li>Ansible</li><li>Pulumi</li><li>GitOps</li><li>Argo CD</li><li>CI/CD</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ===================== ABOUT ===================== -->
+    <section class="section" id="about">
+      <div class="container">
+        <div class="section__head reveal">
+          <p class="eyebrow">// Who you'll work with</p>
+          <h2 class="section__title">A free 30-min consultation</h2>
+          <p class="section__lead">
+            Meet the engineer you'll actually work with — no pitch, just an honest conversation about
+            what your team needs.
+          </p>
+        </div>
+
+        <div class="about">
+          <!-- Profile card -->
+          <aside class="profile reveal">
+            <div class="profile__avatar" aria-hidden="true">DPT</div>
+            <h3 class="profile__name">Diomidis Panagiotis Tsouridis</h3>
+            <p class="profile__role">Senior DevOps Engineer</p>
+            <ul class="profile__certs" aria-label="Certifications and training">
+              <li>DevOps Engineering — NKUA</li>
+              <li>Java &amp; Spring — Univ. of Macedonia</li>
+              <li>DevSecOps Academy — ATC</li>
+            </ul>
+            <div class="profile__actions">
+              <a class="btn btn--primary btn--sm js-book" href="#" target="_blank" rel="noopener">Book a free 30-min call</a>
+              <a class="btn btn--ghost btn--sm js-linkedin" href="#" target="_blank" rel="noopener">LinkedIn</a>
+            </div>
+          </aside>
+
+          <!-- Credentials + engagements -->
+          <div class="about__detail">
+            <div class="panel reveal">
+              <p class="eyebrow">Certifications &amp; training</p>
+              <ul class="creds">
+                <li>
+                  <strong>DevOps Engineering: Software Development Practices &amp; IT Operations</strong>
+                  <span>National &amp; Kapodistrian University of Athens · May 2024</span>
+                </li>
+                <li>
+                  <strong>Modern Programming Technologies: Java &amp; Spring Academy</strong>
+                  <span>University of Macedonia · Jun 2022</span>
+                </li>
+                <li>
+                  <strong>DevSecOps Academy</strong>
+                  <span>Athens Tech College · Jun 2022 · Credential ID 22C013394</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="panel reveal">
+              <!-- NOTE: placeholder engagements — edit these to your real (anonymized) work. -->
+              <p class="eyebrow">Notable engagements</p>
+              <ul class="engagements">
+                <li>
+                  <strong>SaaS scale-up</strong>
+                  <span>Kubernetes platform &amp; GitOps rollout with Argo CD across multiple environments.</span>
+                </li>
+                <li>
+                  <strong>FinTech</strong>
+                  <span>DevSecOps guardrails, policy-as-code and CI/CD hardening across delivery pipelines.</span>
+                </li>
+                <li>
+                  <strong>Enterprise</strong>
+                  <span>Multi-account cloud foundations on AWS with Terraform modules and cost guardrails.</span>
+                </li>
+                <li>
+                  <strong>Data &amp; ML team</strong>
+                  <span>MLOps workflows — model registry, ML CI/CD and automated inference on the cloud.</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== CONTACT ===================== -->
+    <section class="section section--alt" id="contact">
+      <div class="container">
+        <div class="cta reveal">
+          <p class="eyebrow">// Let's talk</p>
+          <h2 class="cta__title">Ready to accelerate delivery?</h2>
+          <p class="section__lead">
+            Let's align on scope, timelines and outcomes in a short intro call. No pitch — just an
+            honest conversation about what your team needs.
+          </p>
+          <div class="cta__actions">
+            <a class="btn btn--primary js-book" href="#" target="_blank" rel="noopener">Book free intro call</a>
+            <a class="btn btn--ghost js-email" href="#">Email us</a>
+            <a class="btn btn--ghost js-linkedin" href="#" target="_blank" rel="noopener">LinkedIn</a>
+          </div>
+          <p class="cta__note">Trusted by engineering teams across SaaS, FinTech &amp; enterprise.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <a class="brand" href="#top" aria-label="DTS Consulting home">
+        <span class="brand__mark" aria-hidden="true">DTS</span>
+        <span class="brand__name">Consulting</span>
+      </a>
+      <nav class="footer__links" aria-label="Footer">
+        <a href="#services">Services</a>
+        <a href="#why-us">Why Us</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+        <a class="js-email" href="#">Email</a>
+      </nav>
+      <p class="footer__copy">© <span id="year">2026</span> DTS Consulting. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
