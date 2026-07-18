@@ -8,3 +8,10 @@ Thumbs.db
 
 # node (only if you ever add tooling)
 node_modules/
+
+# wrangler files
+.wrangler
+.dev.vars*
+!.dev.vars.example
+.env*
+!.env.example
