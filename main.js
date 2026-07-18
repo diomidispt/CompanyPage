@@ -59,6 +59,22 @@ const CONFIG = {
 })();
 
 /* ------------------------------------------------------------
+   Section accordion (mobile only, via CSS media query — this
+   handler is harmless on desktop since .section__body ignores
+   the is-open class there).
+   ------------------------------------------------------------ */
+(function sectionAccordion() {
+  document.querySelectorAll(".section__toggle").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const body = document.getElementById(btn.getAttribute("aria-controls"));
+      if (!body) return;
+      const open = body.classList.toggle("is-open");
+      btn.setAttribute("aria-expanded", String(open));
+    });
+  });
+})();
+
+/* ------------------------------------------------------------
    Precise in-page smooth scrolling.
    Scrolls so the target lands just below the sticky header,
    instead of hiding under it (fixes "doesn't scroll exactly
@@ -78,6 +94,14 @@ const CONFIG = {
 
     a.addEventListener("click", (e) => {
       e.preventDefault();
+      // Jumping straight to a section via nav should reveal its content,
+      // not land on a collapsed accordion header (mobile only).
+      const toggle = target.querySelector(".section__toggle");
+      const body = toggle && document.getElementById(toggle.getAttribute("aria-controls"));
+      if (toggle && body && !body.classList.contains("is-open")) {
+        body.classList.add("is-open");
+        toggle.setAttribute("aria-expanded", "true");
+      }
       // Land on the section's heading block — not the padded section top —
       // so the title sits neatly just below the sticky header every time.
       const anchor = target.querySelector(".section__head, .whyus__intro, .cta") || target;

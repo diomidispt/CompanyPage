@@ -147,6 +147,27 @@ section[id] { scroll-margin-top: 76px; }
 }
 
 /* ============================================================
+   SECTION ACCORDION (mobile only — see RESPONSIVE below)
+   Button wraps the title so it looks and behaves like plain
+   text on desktop; only the mobile media query turns it into
+   a tap target and makes .section__body collapsible.
+   ============================================================ */
+.section__toggle {
+  display: flex; align-items: center; gap: 12px;
+  width: 100%; background: none; border: 0; padding: 0; margin: 0;
+  font: inherit; color: inherit; text-align: left; cursor: default;
+}
+.section__chevron {
+  display: none;
+  width: 10px; height: 10px; flex-shrink: 0;
+  border-right: 2px solid var(--muted); border-bottom: 2px solid var(--muted);
+  transform: rotate(45deg);
+  transition: transform .2s ease;
+}
+.section__body { display: block; }
+.section__body-inner { display: block; }
+
+/* ============================================================
    HERO
    ============================================================ */
 .hero { padding: clamp(72px, 12vw, 132px) 0 clamp(64px, 9vw, 104px); }
@@ -309,4 +330,17 @@ section[id] { scroll-margin-top: 76px; }
   .nav__links .btn { margin-top: 8px; }
   .section { padding: 72px 0; }
   .grid--services, .grid--principles, .grid--three { grid-template-columns: 1fr; }
+
+  /* section accordion: tap a title to expand/collapse its content */
+  .section__toggle { cursor: pointer; }
+  .section__chevron { display: block; }
+  .section__toggle[aria-expanded="true"] .section__chevron { transform: rotate(-135deg); }
+
+  .section__body {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows .3s ease;
+  }
+  .section__body.is-open { grid-template-rows: 1fr; }
+  .section__body-inner { overflow: hidden; }
 }
